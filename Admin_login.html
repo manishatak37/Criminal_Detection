@@ -1,0 +1,211 @@
+<!doctype html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header and Content Page</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="css/Admin_login.css">
+</head>
+
+
+<body>
+    <header>
+        <div id="header">
+            <h1 id="Header_text">Criminal detection tracker based on Suspect Prediction</h1>
+            <img src="images/Fingerprint_logo.webp" alt="Image" id="header_image">
+        </div>
+    </header>
+    <main>
+        <div class="tab-container">
+            <button class="tablinks" onclick="openTab(event, 'Add_Case')">Add Case</button>
+            <button class="tablinks" onclick="openTab(event, 'Add_officer')">Add Officer </button>
+            <button class="tablinks" onclick="openTab(event, 'Add_case_officer')">Add Case officer</button>
+            <button class="tablinks" onclick="openTab(event, 'result')">Result</button>
+            <button class="tablinks" onclick="openTab(event, 'view_suspect')">View Suspect</button>
+            <button class="tablinks" onclick="openTab(event, 'view_evidence')">View Evidence</button>
+            <button class="tablinks" onclick="openTab(event, 'view_case_history')">View Case History</button>
+        </div>
+        <div id="Add_Case" class="tabcontent">
+            <div>
+                <form action="submit.php" method="post">
+                    <label for="CaseId">Case ID:</label>
+                    <input type="text" id="CaseId" name="CaseId" required>
+
+                    <label for="CaseName">Case Name:</label>
+                    <input type="text" id="CaseName" name="CaseName" required>
+
+                    <label for="OfficerId">Officer ID:</label>
+                    <input type="text" id="OfficerId" name="OfficerId" required>
+
+                    <label for="OfficerName">Officer Name:</label>
+                    <input type="text" id="OfficerName" name="OfficerName" required>
+
+                    <label for="Note">Note:</label>
+                    <textarea id="Note" name="Note" rows="4" required></textarea>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+
+        <div id="Add_officer" class="tabcontent">
+            <div>
+                <form action="submit.php" method="post" enctype="multipart/form-data">
+                    <label for="OfficerId">Officer ID:</label>
+                    <input type="text" id="OfficerId" name="OfficerId" required>
+
+                    <label for="OfficerName">Officer Name:</label>
+                    <input type="text" id="OfficerName" name="OfficerName" required>
+
+                    <label for="MobileNo">Mobile Number:</label>
+                    <input type="tel" id="MobileNo" name="MobileNo" pattern="[0-9]{10}" required>
+
+                    <label for="Photo">Photo:</label>
+                    <input type="file" id="Photo" name="Photo" accept="image/*" required>
+
+                    <label for="MailId">Email ID:</label>
+                    <input type="email" id="MailId" name="MailId" required>
+
+                    <label for="AreaImage">Area Image:</label>
+                    <input type="file" id="AreaImage" name="AreaImage" accept="image/*" required>
+
+                    <br>
+                    <br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+
+        <div id="Add_case_officer" class="tabcontent">
+            <div>
+                <form>
+                    <label for="OfficerId">Case ID:</label>
+                    <select id="OfficerId" name="OfficerId" required>
+                        <option value="officer1">Officer 1</option>
+                        <option value="officer2">Officer 2</option>
+                        <option value="officer3">Officer 3</option>
+
+                    </select>
+
+
+                    <label for="CaseName">Case Name:</label>
+                    <input type="text" id="CaseName" name="CaseName" required>
+
+                    <label for="OfficerId">Officer ID:</label>
+                    <select id="OfficerId" name="OfficerId" required>
+                        <option value="officer1">Officer 1</option>
+                        <option value="officer2">Officer 2</option>
+                        <option value="officer3">Officer 3</option>
+
+                    </select>
+
+                    <label for="OfficerName">Officer Name:</label>
+                    <input type="text" id="OfficerName" name="OfficerName" required>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <div id="result" class="tabcontent">
+            <div>
+                <form>
+                    <label for="OfficerId">Case ID:</label>
+                    <select id="OfficerId" name="OfficerId" required>
+                        <option value="officer1">Officer 1</option>
+                        <option value="officer2">Officer 2</option>
+                        <option value="officer3">Officer 3</option>
+
+                    </select>
+
+
+                    <label for="CaseName">Case Name:</label>
+                    <input type="text" id="CaseName" name="CaseName" required>
+
+                    <label for="OfficerId">Suspects:</label>
+                    <select id="OfficerId" name="OfficerId" required>
+                        <option value="officer1">Suspect 1</option>
+                        <option value="officer2">Suspect 2</option>
+                        <option value="officer3">Suspect 3</option>
+
+                    </select>
+
+                    <label for="Note">Note:</label>
+                    <textarea id="Note" name="Note" rows="4" required></textarea>
+
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <div id="view_suspect" class="tabcontent">
+            <div>
+                <form action="submit.php" method="post">
+                    <label for="CaseId">Case ID:</label>
+                    <input type="text" id="CaseId" name="CaseId" required>
+
+                    <label for="CaseName">Case Name:</label>
+                    <input type="text" id="CaseName" name="CaseName" required>
+
+                    <label for="OfficerId">Officer ID:</label>
+                    <input type="text" id="OfficerId" name="OfficerId" required>
+
+                    <label for="OfficerName">Officer Name:</label>
+                    <input type="text" id="OfficerName" name="OfficerName" required>
+
+                    <label for="Note">Note:</label>
+                    <textarea id="Note" name="Note" rows="4" required></textarea>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <div id="view_evidence" class="tabcontent">
+            <div>
+                <form action="submit.php" method="post">
+                    <label for="CaseId">Case ID:</label>
+                    <input type="text" id="CaseId" name="CaseId" required>
+
+                    <label for="CaseName">Case Name:</label>
+                    <input type="text" id="CaseName" name="CaseName" required>
+
+                    <label for="OfficerId">Officer ID:</label>
+                    <input type="text" id="OfficerId" name="OfficerId" required>
+
+                    <label for="OfficerName">Officer Name:</label>
+                    <input type="text" id="OfficerName" name="OfficerName" required>
+
+                    <label for="Note">Note:</label>
+                    <textarea id="Note" name="Note" rows="4" required></textarea>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <div id="view_case_history" class="tabcontent">
+            <div>
+                <form action="submit.php" method="post">
+                    <label for="CaseId">Case ID:</label>
+                    <input type="text" id="CaseId" name="CaseId" required>
+
+                    <label for="CaseName">Case Name:</label>
+                    <input type="text" id="CaseName" name="CaseName" required>
+
+                    <label for="OfficerId">Officer ID:</label>
+                    <input type="text" id="OfficerId" name="OfficerId" required>
+
+                    <label for="OfficerName">Officer Name:</label>
+                    <input type="text" id="OfficerName" name="OfficerName" required>
+
+                    <label for="Note">Note:</label>
+                    <textarea id="Note" name="Note" rows="4" required></textarea>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <script src="javascript/Admin.js"></script>
+    </main>
+</body>
+
+</html>
